@@ -1,14 +1,14 @@
 #!/bin/bash
 
-PROCESS_NAME="test.sh"
+PROCESS_NAME="test"
 SCRIPT_NAME="$(basename "$0")"
 FILE_NAME="${SCRIPT_NAME%.*}"
 SCRIPT_PATH="$(realpath "$0")"
 LOG_PATH="/var/log/monitoring.log"
 UNIT_PATH="/etc/systemd/system"
 USER_NAME=$(whoami)
-URL="https://google.com"
-SLEEP_TIME=1
+URL="https://test.com/monitoring/test/api"
+SLEEP_TIME=60
 
 create_unit() {
     if [[ -f "$UNIT_PATH/$FILE_NAME.service" ]]; then
